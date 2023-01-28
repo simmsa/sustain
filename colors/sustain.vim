@@ -1223,10 +1223,10 @@ function! s:Hi(group, guifg, ctermfg, guibg, ctermbg, attr)
 
     let l:guifg = a:guifg
     let l:ctermfg = a:ctermfg
-    if(a:group ==# 'Normal' && s:normal_always_white)
-        let l:guifg = '#dddddd'
-        let l:ctermfg = 255
-    endif
+    " if(a:group ==# 'Normal' && s:normal_always_white)
+    "     let l:guifg = '#dddddd'
+    "     let l:ctermfg = 255
+    " endif
     execute printf(l:hi_string, a:group, l:guifg, l:ctermfg, a:guibg, a:ctermbg, a:attr, a:attr)
 endfunction
 
@@ -1835,7 +1835,7 @@ HiFgCode 'Repeat', s:purple, s:shade.light
 " Grey ---------------------------------------------------------------- {{{
 
 " Anything not in a syntax group ends up with this highlight
-HiFgCode 'Normal', s:grey, s:shade.light
+HiFgCode 'Normal', s:grey, s:shade.medium
 
 " End Grey ------------------------------------------------------------ }}}
 
@@ -1849,7 +1849,9 @@ HiFgCode 'Normal', s:grey, s:shade.light
 " HiUi 'Normal', '', '', '', ''
 
 " Use this for gui apps that require having a background set
-HiUi 'Normal', s:grey, s:shade.light, s:bg, s:shade.dark
+" There is a bug here where this does not correctly apply the setting for
+" code brightness and contrast
+HiUi 'Normal', s:grey, s:shade.medium, s:bg, s:shade.dark
 
 " End Background ------------------------------------------------------- }}}
 " Cursor Related ------------------------------------------------------- {{{
