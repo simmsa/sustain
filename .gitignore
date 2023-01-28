@@ -1,0 +1,12 @@
+# Mac Stuff
+.DS_Store
+
+# Vim Stuff
+*~
+*.swp
+*.swo
+tmp
+.netrwhist
+view/*
+spell/*
+
